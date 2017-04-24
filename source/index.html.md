@@ -30,22 +30,20 @@ Welcome to the IShoupBud API! This is a Final Assigment;.
 
 Parameter | Description
 --------- | -----------
-grant_type | Grant Type default
-client_id | Client ID from server
-client_secret | Client Secret From Server
-username | Use your email address
+name | Your Name
+phone | Your Phone
+email | Use your email address
 password | Your Password
 
 
 ```shell
 curl -X POST \
-  http://skripsi.home.dev/oauth/register \
+  http://shoupbud.xyz/api/oauth/register \
   -H 'accept: application/json' \
-  -H 'cache-control: no-cache' \
+  -F 'name=Your Name' \
+  -F email=yourmail@domain \
   -F password=yourpassword \
-  -F email=nipeharefa@gmail.com \
-  -F phone=yourphonenumber \
-  -F 'name=yourname'
+  -F phone=youremail
 ```
 
 
