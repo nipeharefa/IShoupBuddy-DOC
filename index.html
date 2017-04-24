@@ -245,19 +245,15 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>grant_type</td>
-<td>Grant Type default</td>
+<td>name</td>
+<td>Your Name</td>
 </tr>
 <tr>
-<td>client_id</td>
-<td>Client ID from server</td>
+<td>phone</td>
+<td>Your Phone</td>
 </tr>
 <tr>
-<td>client_secret</td>
-<td>Client Secret From Server</td>
-</tr>
-<tr>
-<td>username</td>
+<td>email</td>
 <td>Use your email address</td>
 </tr>
 <tr>
@@ -266,13 +262,12 @@
 </tr>
 </tbody></table>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://skripsi.home.dev/oauth/register <span class="se">\</span>
+  http://shoupbud.xyz/api/oauth/register <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -F <span class="s1">'name=Your Name'</span> <span class="se">\</span>
+  -F <span class="nv">email</span><span class="o">=</span>yourmail@domain <span class="se">\</span>
   -F <span class="nv">password</span><span class="o">=</span>yourpassword <span class="se">\</span>
-  -F <span class="nv">email</span><span class="o">=</span>nipeharefa@gmail.com <span class="se">\</span>
-  -F <span class="nv">phone</span><span class="o">=</span>yourphonenumber <span class="se">\</span>
-  -F <span class="s1">'name=yourname'</span>
+  -F <span class="nv">phone</span><span class="o">=</span>youremail
 </code></pre>
 <h2 id="login">Login</h2>
 
