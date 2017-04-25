@@ -210,3 +210,73 @@ curl -X DELETE \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' 
 ```
+
+
+
+# User
+
+## Get User Info
+
+## Get User Account Settings
+
+<aside class="notice">
+Requires authentication.
+</aside>
+
+## Update User Account Settings
+
+<aside class="notice">
+Requires authentication.
+</aside>
+
+Parameter | | Description
+--------- | --------- | -----------
+`name` | required | User's name
+`gender` | required | User's gender
+
+```shell
+curl -X PUT \
+  http://skripsi.home.dev/api/user/9 \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'name=Nipe%20Setiawan&gender=0'
+```
+
+
+> Response Sukses (200)
+
+```json
+{
+  "status": "OK",
+  "user": {
+    "id": 9,
+    "name": "Nipe Setiawan",
+    "email": "nipeharefa@gmail.com",
+    "phone": "082275121178",
+    "picture_url": null,
+    "role": 1,
+    "confirmed": 1,
+    "langitude": null,
+    "longitude": null,
+    "saldo": 0,
+    "created_at": "2017-04-23 13:18:12",
+    "updated_at": "2017-04-25 07:00:45"
+  },
+  "message": "Akun telah di update"
+}
+```
+
+> Error Validasi (422)
+
+```json
+{
+  "name": [
+    "The name field is required."
+  ],
+  "gender": [
+    "The gender field is required."
+  ]
+}
+```
