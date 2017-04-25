@@ -234,7 +234,7 @@
 
 <h2 id="register">Register</h2>
 
-<p><code class="prettyprint">POST http://shoupbud.xyz/oauth/register/</code></p>
+<p><code class="prettyprint">POST https://shoupbud.xyz/api/oauth/register/</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -250,7 +250,7 @@
 </tr>
 <tr>
 <td>phone</td>
-<td>Your Phone</td>
+<td>Your Phone Number</td>
 </tr>
 <tr>
 <td>email</td>
@@ -262,7 +262,7 @@
 </tr>
 </tbody></table>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://shoupbud.xyz/api/oauth/register <span class="se">\</span>
+  https://shoupbud.xyz/api/oauth/register <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -F <span class="s1">'name=Your Name'</span> <span class="se">\</span>
   -F <span class="nv">email</span><span class="o">=</span>yourmail@domain <span class="se">\</span>
@@ -273,7 +273,7 @@
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://shoupbud.xyz/oauth/login/</code></p>
+<p><code class="prettyprint">POST https://shoupbud.xyz/api/oauth/login/</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -305,7 +305,7 @@
 </tr>
 </tbody></table>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
-  https://shoupbud.xyz/oauth/login <span class="se">\</span>
+  https://shoupbud.xyz/api/oauth/login <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -F <span class="nv">grant_type</span><span class="o">=</span>password <span class="se">\</span>
