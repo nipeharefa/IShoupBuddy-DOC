@@ -95,11 +95,12 @@ curl -X POST \
 
 ## Get List Produk
 
-Untuk mendapatkan daftar produk yang terdaftar di database tanpa parameter. Jika tedapat parameter tambahan seperti `keyword` maka response akan disesuaikan dengan value dari parameter. 
+Untuk mendapatkan daftar produk yang terdaftar di database tanpa parameter. Jika tedapat parameter tambahan seperti `keyword` maka response akan disesuaikan dengan value dari parameter, dan dapat menggunakan lebih dari satu parameter.  
 
 
 Parameter | Description
 --------- | -----------
+`keyword` | Hanya menampilkan produk sesuai dengan keywor
 `category_id` | Hanya menampilkan produk dengan kategori tertentu
 
 ```shell
@@ -115,6 +116,13 @@ Menampilkan produk dengan ketegori spesifik
 
 curl -X GET \
   https://shoupbud.xyz/api/product?category_id=1 \
+  -H 'accept: application/json' \
+  -H 'cache-control: no-cache'
+
+Menampilkan produk dengan penggabungan parameter categori_id dan keyword
+
+curl -X GET \
+  'http://skripsi.home.dev/api/product?category_id=1&keyword=hit' \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache'
 
