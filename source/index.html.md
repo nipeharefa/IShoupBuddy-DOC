@@ -127,7 +127,54 @@ curl -X GET \
   -H 'cache-control: no-cache'
 
 ```
+## Get Product By Barcode
 
+Parameter | | Description
+--------- | --------- | -----------
+`product_barcode` | required | Product's baracode
+
+```shell
+curl -X GET \
+  https://shoupbud.xyz/api/product/barcode/product_barcode \
+  -H 'accept: application/json' \
+  -H 'cache-control: no-cache' \
+```
+
+> Response Sukses (200)
+
+```json
+{
+  "status": "OK",
+  "product": {
+    "id": 15,
+    "name": "Soffel Kuli tJeruk 80g",
+    "category": {
+      "id": 1,
+      "name": "Uncategorized",
+      "slug": "uncategorized",
+      "description": null
+    },
+    "barcode": 8992772315128,
+    "picture_url": {
+      "small": "https://shoupbud.xyz/image/small/IMG_1571.JPG",
+      "medium": "https://shoupbud.xyz/image/medium/IMG_1571.JPG",
+      "large": "https://shoupbud.xyz/image/large/IMG_1571.JPG"
+    },
+    "description": ""
+  },
+  "message": null
+}
+```
+
+> Response Fail (404)
+
+```json
+{
+  "status": "OK",
+  "product": null,
+  "message": "Produk tidak ditemukan"
+}
+```
 
 # Wishlist
 
@@ -212,7 +259,6 @@ curl -X DELETE \
 ```
 
 
-
 # User
 
 ## Get User Info
@@ -236,7 +282,7 @@ Parameter | | Description
 
 ```shell
 curl -X PUT \
-  http://skripsi.home.dev/api/user/9 \
+  https://shoupbud.xyz/api/user/9 \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' \
