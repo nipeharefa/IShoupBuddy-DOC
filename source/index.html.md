@@ -24,21 +24,21 @@ Welcome to the IShoupBud API! This is a Final Assigment;.
 ## Register
 
 
-`POST http://shoupbud.xyz/oauth/register/`
+`POST https://shoupbud.xyz/api/oauth/register/`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
 name | Your Name
-phone | Your Phone
+phone | Your Phone Number
 email | Use your email address
 password | Your Password
 
 
 ```shell
 curl -X POST \
-  http://shoupbud.xyz/api/oauth/register \
+  https://shoupbud.xyz/api/oauth/register \
   -H 'accept: application/json' \
   -F 'name=Your Name' \
   -F email=yourmail@domain \
@@ -51,7 +51,7 @@ curl -X POST \
 
 ### HTTP Request
 
-`POST http://shoupbud.xyz/oauth/login/`
+`POST https://shoupbud.xyz/api/oauth/login/`
 
 ### URL Parameters
 
@@ -65,7 +65,7 @@ password | Your Password
 
 ```shell
 curl -X POST \
-  https://shoupbud.xyz/oauth/login \
+  https://shoupbud.xyz/api/oauth/login \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache' \
   -F grant_type=password \
