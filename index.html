@@ -325,7 +325,7 @@
 
 <h2 id="get-list-produk">Get List Produk</h2>
 
-<p>Untuk mendapatkan daftar produk yang terdaftar di database tanpa parameter. Jika tedapat parameter tambahan seperti <code class="prettyprint">keyword</code> maka response akan disesuaikan dengan value dari parameter. </p>
+<p>Untuk mendapatkan daftar produk yang terdaftar di database tanpa parameter. Jika tedapat parameter tambahan seperti <code class="prettyprint">keyword</code> maka response akan disesuaikan dengan value dari parameter, dan dapat menggunakan lebih dari satu parameter.  </p>
 
 <table><thead>
 <tr>
@@ -333,6 +333,10 @@
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td><code class="prettyprint">keyword</code></td>
+<td>Hanya menampilkan produk sesuai dengan keywor</td>
+</tr>
 <tr>
 <td><code class="prettyprint">category_id</code></td>
 <td>Hanya menampilkan produk dengan kategori tertentu</td>
@@ -353,6 +357,81 @@ curl -X GET <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 
+Menampilkan produk dengan penggabungan parameter categori_id dan keyword
+
+curl -X GET <span class="se">\</span>
+  <span class="s1">'https://shoupbud.xyz/api/product?category_id=1&amp;keyword=hit'</span> <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+
+</code></pre>
+<h1 id="wishlist">Wishlist</h1>
+
+<h2 id="get-account-wishlist">Get Account Wishlist</h2>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://shoupbud.xyz/api/wishlist <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'</span>
+</code></pre>
+<blockquote>
+<p>Resopnse Sukses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wishlist"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-25 04:32:51"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-25 04:32:51"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="tambah-produk-ke-daftar-wishlist">Tambah Produk ke daftar Wishlist</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://shoupbud.xyz/api/wishlist <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'</span>
+  -F <span class="nv">product_id</span><span class="o">=</span>1
+
+</code></pre>
+<blockquote>
+<p>Response Sukses (200)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wishlist"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-25 04:32:51"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-25 04:32:51"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response Fail (400)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wishlist"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data product tidak ditemukan"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="hapus-daftar-wishlist">Hapus Daftar Wishlist</h2>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  https://shoupbud.xyz/api/wishlist/1 <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> 
 </code></pre>
           <h1 id="errors">Errors</h1>
 
