@@ -88,6 +88,30 @@ curl -X POST \
 }
 ```
 
+# Category
+
+## Get List Category
+
+
+```shell
+curl -X GET \
+  http://skripsi.home.dev/api/category \
+  -H 'accept: application/json' \
+  -H 'cache-control: no-cache'
+```
+
+> Response Success (200)
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "description": null
+  }
+]
+```
 
 
 
@@ -324,5 +348,41 @@ curl -X PUT \
   "gender": [
     "The gender field is required."
   ]
+}
+```
+
+
+# Vendor
+
+## Get List Vendor
+
+
+```shell
+curl -X GET \
+  http://skripsi.home.dev/api/vendor \
+  -H 'accept: application/json' \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: df638be6-9162-7912-fa27-715af79bcbb6'
+```
+
+
+> Response Success (200)
+
+```json
+{
+  "status": "OK",
+  "vendors": [
+    {
+      "id": 44,
+      "name": "PT. Alfamart Indonesia",
+      "email": "info@alfamart.com",
+      "phone": "6282229111",
+      "picture_url": null,
+      "langitude": null,
+      "longitude": null,
+
+    }
+  ],
+  "message": null
 }
 ```
