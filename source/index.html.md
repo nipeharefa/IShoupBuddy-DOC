@@ -95,7 +95,7 @@ curl -X POST \
 
 ```shell
 curl -X GET \
-  http://skripsi.home.dev/api/category \
+  https://shoupbud.xyz/api/category \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache'
 ```
@@ -151,6 +151,55 @@ curl -X GET \
   -H 'cache-control: no-cache'
 
 ```
+
+> Response Sukses (200)
+
+```json
+{
+  "status": "OK",
+  "products": [
+    {
+      "id": 24,
+      "name": "Soffel Kulit Jeruk 80g",
+      "category": {
+        "id": 1,
+        "name": "Uncategorized",
+        "slug": "uncategorized",
+        "description": null
+      },
+      "barcode": 8992772315128,
+      "picture_url": {
+        "small": "https://shoupbud.xyz/image/small/ce7NxJ8vBdTEHcGMMuif.jpg",
+        "medium": "https://shoupbud.xyz/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg",
+        "large": "https://shoupbud.xyz/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"
+      },
+      "description": "",
+      "vendors": [
+        {
+          "id": 2,
+          "name": "Soffel Kulit Jeruk 80g",
+          "price": 100000,
+          "price_string": 100000,
+          "barcode": "8992772315128",
+          "vendor": {
+            "id": 44,
+            "name": "PT. Alfamart Indonesia",
+            "picture_url": null,
+            "total_product": 1,
+            "total_review": 0
+          }
+        }
+      ],
+      "total_review": 0,
+      "total_vendor": 1,
+      "total_rating": 0,
+      "minimum_price": 100000
+    }
+  ],
+  "message": null
+}
+```
+
 ## Get Product By Barcode
 
 Parameter | | Description
@@ -197,6 +246,133 @@ curl -X GET \
   "status": "OK",
   "product": null,
   "message": "Produk tidak ditemukan"
+}
+```
+
+## Get Details Product
+
+
+```shell
+curl -X GET \
+  https://shoupbud.xyz/api/product/24 \
+  -H 'accept: application/json' \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 06b8d7ba-15fa-22c2-a695-ce076287d318'
+```
+
+> Response Sukses (200)
+
+```json
+{
+  "status": "OK",
+  "product": {
+    "id": 24,
+    "name": "Soffel Kulit Jeruk 80g",
+    "category": {
+      "id": 1,
+      "name": "Uncategorized",
+      "slug": "uncategorized",
+      "description": null
+    },
+    "barcode": 8992772315128,
+    "picture_url": {
+      "small": "http://skripsi.home.dev/image/small/ce7NxJ8vBdTEHcGMMuif.jpg",
+      "medium": "http://skripsi.home.dev/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg",
+      "large": "http://skripsi.home.dev/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"
+    },
+    "description": "",
+    "vendors": [
+      {
+        "id": 2,
+        "name": "Soffel Kulit Jeruk 80g",
+        "price": 100000,
+        "price_string": 100000,
+        "barcode": "8992772315128",
+        "vendor": {
+          "id": 44,
+          "name": "PT. Alfamart Indonesia",
+          "picture_url": null,
+          "total_product": 1,
+          "total_review": 0
+        }
+      }
+    ],
+    "total_review": 0,
+    "total_vendor": 1,
+    "total_rating": 0,
+    "minimum_price": 100000
+  },
+  "message": null
+}
+```
+
+> Response Fail (404)
+
+```json
+{
+  "status": "ERROR",
+  "product": [],
+  "message": "Produk tidak ditemukan"
+}
+```
+
+# Promo
+
+## Get Promo
+
+```shell
+curl -X GET \
+  http://skripsi.home.dev/api/promo \
+  -H 'accept: application/json' \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: 7a08dfd3-e60c-2103-4f40-4ee831f55133'
+```
+
+> Response Sukses (200)
+
+```json
+{
+  "status": "OK",
+  "promo": [
+    {
+      "id": 24,
+      "name": "Soffel Kulit Jeruk 80g",
+      "category": {
+        "id": 1,
+        "name": "Uncategorized",
+        "slug": "uncategorized",
+        "description": null
+      },
+      "barcode": 8992772315128,
+      "picture_url": {
+        "small": "http://skripsi.home.dev/image/small/ce7NxJ8vBdTEHcGMMuif.jpg",
+        "medium": "http://skripsi.home.dev/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg",
+        "large": "http://skripsi.home.dev/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"
+      },
+      "description": "",
+      "vendors": [
+        {
+          "id": 2,
+          "name": "Soffel Kulit Jeruk 80g",
+          "price": 100000,
+          "price_string": 100000,
+          "barcode": "8992772315128",
+          "vendor": {
+            "id": 44,
+            "name": "PT. Alfamart Indonesia",
+            "picture_url": null,
+            "total_product": 1,
+            "total_review": 0
+          }
+        }
+      ],
+      "total_review": 0,
+      "total_vendor": 1,
+      "total_rating": 0,
+      "minimum_price": 100000
+    }
+  ],
+  "message": null
 }
 ```
 
@@ -359,7 +535,7 @@ curl -X PUT \
 
 ```shell
 curl -X GET \
-  http://skripsi.home.dev/api/vendor \
+  https://shoupbud.xyz/api/vendor \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache' \
   -H 'postman-token: df638be6-9162-7912-fa27-715af79bcbb6'
