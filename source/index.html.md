@@ -468,6 +468,36 @@ curl -X DELETE \
 <aside class="notice">
 Requires authentication.
 </aside>
+## Change Password
+
+
+```shell
+curl -X POST \
+  https://shoupbud.xyz/api/user/change_password \
+    -H 'accept: application/json' \
+    -H 'authorization: Bearer token \
+    -F current_password=nipeharefa \
+    -F password=nipeharefa \
+    -F password_confirmation=nipeharefa
+```
+
+> Response Sukses (200)
+
+```json
+{
+    "status": "OK",
+    "message": "Password berhasil dipeerbaharui"
+}
+```
+
+> Response Fail (400)
+
+```json
+{
+    "status": "ERROR",
+    "message": "Current password error"
+}
+```
 
 ## Update User Account Settings
 
