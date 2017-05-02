@@ -681,6 +681,31 @@ curl -X GET <span class="se">\</span>
 Requires authentication.
 </aside>
 
+<h2 id="change-password">Change Password</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://shoupbud.xyz/api/user/change_password <span class="se">\</span>
+    -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+    -H <span class="s1">'authorization: Bearer token \
+    -F current_password=nipeharefa \
+    -F password=nipeharefa \
+    -F password_confirmation=nipeharefa
+</span></code></pre>
+<blockquote>
+<p>Response Sukses (200)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password berhasil dipeerbaharui"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response Fail (400)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current password error"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h2 id="update-user-account-settings">Update User Account Settings</h2>
 
 <aside class="notice">
