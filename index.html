@@ -321,6 +321,72 @@
   </span><span class="s2">"refresh_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r8b7R+SflHsagfhvrtQoDvaHQxHwTWl4RbKid5SfJOiQE0DuHgCYA5goSwUehxpV+GMZfhauMWuuW9BwpfGH1/lt6ygr+yD7D/qWcoBMmk7XbR3NHKWNVhmjHkjYhDMFMpLaJpP0M8ykep9Nd0EXsDU+yd+MxDHSHYr3nQIjkPNzfP0FHFHvYyjxROq9aH6mpRSh7q09UzHER+1aeA+ObumKtnCulDLEmM4CPgDz4QZiK4iqJkzIZZMce+p3rX1OrI4LOx71DC2Yq9EIze8NyygxtHe12jAsb973zHnV28aa6Qe/lTEsMWRzP5BDMU2hCiVRqktYFvRau9UBzxrdpD3n3Pbvx8NYch6QmS1SS2dZsayAHzSkeYoATz5p4lvCGvQ6/AacjHVepvKeRv981k/NfQDbcpEFCRJd0A+T98r1cLiWDBJdnzrskr1WZc3JIHCm66CgiD4nFnep/GM4Z9rQWdjTbLmyRbKl/2XJIPwI5QuNtEvUe0weqdtfxGK9Ikmdo7tNzFCKdZDtbHRdy4bKhSRP478OayiE9WM5aHYescHlbEPIEtN0Cd8RubHHiTFu2GXyzU8gHH+cjn1TYTMtJVhuyOwsbqANu21fIFAWm1AzP7ib6IZeWCHKlvUuEoTIS1y8FeyTwlRm4a9J6Lo74ECsB4I0vi0w0gU6MBg="</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h1 id="cart">Cart</h1>
+
+<h2 id="get-list-cart">Get List Cart</h2>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  https://shoupbud.xyz/api/cart <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre>
+<blockquote>
+<p>Response Sukses(200)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"carts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mylanta Obat Maag Liquid 150Ml"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/small/hMFsDR4NDVq8BZ11TqrT.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/medium/hMFsDR4NDVq8BZ11TqrT.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/large/hMFsDR4NDVq8BZ11TqrT.jpg"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"price_string"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"899275051226"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_product"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_review"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total_strings"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="add-product-to-cart">Add Product to Cart</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://shoupbud.xyz/api/cart <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -F <span class="nv">product_id</span><span class="o">=</span>3 <span class="se">\</span>
+  -F <span class="nv">quantity</span><span class="o">=</span>2
+</code></pre>
+<blockquote>
+<p>Response Sukses (200)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"product_vendor_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"identify_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-03 15:27:09"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-03 15:27:09"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h1 id="category">Category</h1>
 
 <h2 id="get-list-category">Get List Category</h2>
@@ -532,9 +598,9 @@ curl -X GET <span class="se">\</span>
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">8992772315128</span><span class="p">,</span><span class="w">
     </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/small/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="w">
+      </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/small/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"vendors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -574,7 +640,7 @@ curl -X GET <span class="se">\</span>
 
 <h2 id="get-promo">Get Promo</h2>
 <pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
-  http://skripsi.home.dev/api/promo <span class="se">\</span>
+  https://shoupbud.xyz/api/promo <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'postman-token: 7a08dfd3-e60c-2103-4f40-4ee831f55133'</span>
@@ -596,9 +662,9 @@ curl -X GET <span class="se">\</span>
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">8992772315128</span><span class="p">,</span><span class="w">
       </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/small/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="w">
+        </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/small/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
       </span><span class="s2">"vendors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
