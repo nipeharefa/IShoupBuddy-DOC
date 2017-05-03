@@ -87,6 +87,80 @@ curl -X POST \
   "refresh_token": "r8b7R+SflHsagfhvrtQoDvaHQxHwTWl4RbKid5SfJOiQE0DuHgCYA5goSwUehxpV+GMZfhauMWuuW9BwpfGH1/lt6ygr+yD7D/qWcoBMmk7XbR3NHKWNVhmjHkjYhDMFMpLaJpP0M8ykep9Nd0EXsDU+yd+MxDHSHYr3nQIjkPNzfP0FHFHvYyjxROq9aH6mpRSh7q09UzHER+1aeA+ObumKtnCulDLEmM4CPgDz4QZiK4iqJkzIZZMce+p3rX1OrI4LOx71DC2Yq9EIze8NyygxtHe12jAsb973zHnV28aa6Qe/lTEsMWRzP5BDMU2hCiVRqktYFvRau9UBzxrdpD3n3Pbvx8NYch6QmS1SS2dZsayAHzSkeYoATz5p4lvCGvQ6/AacjHVepvKeRv981k/NfQDbcpEFCRJd0A+T98r1cLiWDBJdnzrskr1WZc3JIHCm66CgiD4nFnep/GM4Z9rQWdjTbLmyRbKl/2XJIPwI5QuNtEvUe0weqdtfxGK9Ikmdo7tNzFCKdZDtbHRdy4bKhSRP478OayiE9WM5aHYescHlbEPIEtN0Cd8RubHHiTFu2GXyzU8gHH+cjn1TYTMtJVhuyOwsbqANu21fIFAWm1AzP7ib6IZeWCHKlvUuEoTIS1y8FeyTwlRm4a9J6Lo74ECsB4I0vi0w0gU6MBg="
 }
 ```
+# Cart
+
+## Get List Cart
+
+
+```shell
+curl -X GET \
+  https://shoupbud.xyz/api/cart \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache'
+```
+
+> Response Sukses(200)
+
+```json
+{
+  "data": "OK",
+  "message": null,
+  "carts": {
+    "items": [
+      {
+        "id": 2,
+        "items": {
+          "id": 3,
+          "name": "Mylanta Obat Maag Liquid 150Ml",
+          "picture_url": {
+            "small": "https://shoupbud.xyz/images/small/hMFsDR4NDVq8BZ11TqrT.jpg",
+            "medium": "https://shoupbud.xyz/images/medium/hMFsDR4NDVq8BZ11TqrT.jpg",
+            "large": "https://shoupbud.xyz/images/large/hMFsDR4NDVq8BZ11TqrT.jpg"
+          },
+          "price": 10000,
+          "price_string": 10000,
+          "barcode": "899275051226",
+          "vendor": {
+            "id": 44,
+            "name": "PT. Alfamart Indonesia",
+            "picture_url": null,
+            "total_product": 1,
+            "total_review": 0
+          }
+        },
+        "total": 100000
+      }
+    ],
+    "total": 100000,
+    "total_strings": ""
+  }
+}
+```
+
+## Add Product to Cart
+
+```shell
+curl -X POST \
+  https://shoupbud.xyz/api/cart \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache' \
+  -F product_id=3 \
+  -F quantity=2
+```
+
+> Response Sukses (200)
+
+```json
+{
+  "product_vendor_id": "3",
+  "identify_id": 39,
+  "updated_at": "2017-05-03 15:27:09",
+  "created_at": "2017-05-03 15:27:09",
+  "id": 3
+}
+```
 
 # Category
 
@@ -304,9 +378,9 @@ curl -X GET \
     },
     "barcode": 8992772315128,
     "picture_url": {
-      "small": "http://skripsi.home.dev/image/small/ce7NxJ8vBdTEHcGMMuif.jpg",
-      "medium": "http://skripsi.home.dev/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg",
-      "large": "http://skripsi.home.dev/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"
+      "small": "https://shoupbud.xyz/image/small/ce7NxJ8vBdTEHcGMMuif.jpg",
+      "medium": "https://shoupbud.xyz/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg",
+      "large": "https://shoupbud.xyz/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"
     },
     "description": "",
     "vendors": [
@@ -350,7 +424,7 @@ curl -X GET \
 
 ```shell
 curl -X GET \
-  http://skripsi.home.dev/api/promo \
+  https://shoupbud.xyz/api/promo \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache' \
   -H 'postman-token: 7a08dfd3-e60c-2103-4f40-4ee831f55133'
@@ -373,9 +447,9 @@ curl -X GET \
       },
       "barcode": 8992772315128,
       "picture_url": {
-        "small": "http://skripsi.home.dev/image/small/ce7NxJ8vBdTEHcGMMuif.jpg",
-        "medium": "http://skripsi.home.dev/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg",
-        "large": "http://skripsi.home.dev/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"
+        "small": "https://shoupbud.xyz/image/small/ce7NxJ8vBdTEHcGMMuif.jpg",
+        "medium": "https://shoupbud.xyz/image/medium/ce7NxJ8vBdTEHcGMMuif.jpg",
+        "large": "https://shoupbud.xyz/image/large/ce7NxJ8vBdTEHcGMMuif.jpg"
       },
       "description": "",
       "vendors": [
