@@ -537,6 +537,10 @@ Parameter | | Description
 --------- | --------- | -----------
 `name` | required | User's name
 `gender` | required | User's gender
+`picture_url` | required | User's picture
+`address` | required | User's Address
+`phone` | required | User's phone
+
 
 ```shell
 curl -X PUT \
@@ -545,7 +549,7 @@ curl -X PUT \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'name=Nipe%20Setiawan&gender=0'
+  -d 'name=Nipe%20Setiawan&gender=0&picture_url=gambar.jpg&phone=082276121178&addresss=medan'
 ```
 
 
