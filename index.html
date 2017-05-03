@@ -341,6 +341,29 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
+<h1 id="image">Image</h1>
+
+<h2 id="image-uploader">Image Uploader</h2>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://shoupbud.xyz/api/image <span class="se">\</span>
+    -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+    -H <span class="s1">'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'</span> <span class="se">\</span>
+    -F <span class="nv">image</span><span class="o">=</span>@foto0900.jpg
+</code></pre>
+<blockquote>
+<p>Response Sukses (200)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qiirKFHl5spi4k48w5WE.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/small/qiirKFHl5spi4k48w5WE.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/medium/qiirKFHl5spi4k48w5WE.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/large/qiirKFHl5spi4k48w5WE.jpg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h1 id="product">Product</h1>
 
 <h2 id="get-list-produk">Get List Produk</h2>
