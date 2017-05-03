@@ -752,6 +752,21 @@ Requires authentication.
 <td>required</td>
 <td>User&rsquo;s gender</td>
 </tr>
+<tr>
+<td><code class="prettyprint">picture_url</code></td>
+<td>required</td>
+<td>User&rsquo;s picture</td>
+</tr>
+<tr>
+<td><code class="prettyprint">address</code></td>
+<td>required</td>
+<td>User&rsquo;s Address</td>
+</tr>
+<tr>
+<td><code class="prettyprint">phone</code></td>
+<td>required</td>
+<td>User&rsquo;s phone</td>
+</tr>
 </tbody></table>
 <pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
   https://shoupbud.xyz/api/user/9 <span class="se">\</span>
@@ -759,7 +774,7 @@ Requires authentication.
   -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
   -H <span class="s1">'content-type: application/x-www-form-urlencoded'</span> <span class="se">\</span>
-  -d <span class="s1">'name=Nipe%20Setiawan&amp;gender=0'</span>
+  -d <span class="s1">'name=Nipe%20Setiawan&amp;gender=0&amp;picture_url=gambar.jpg&amp;phone=082276121178&amp;addresss=medan'</span>
 </code></pre>
 <blockquote>
 <p>Response Sukses (200)</p>
