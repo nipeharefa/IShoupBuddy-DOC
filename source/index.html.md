@@ -611,19 +611,22 @@ Parameter | | Description
 --------- | --------- | -----------
 `name` | required | User's name
 `gender` | required | User's gender
-`picture_url` | required | User's picture
+`picture_url` | 'filename|blob' required | User's picture
 `address` | required | User's Address
 `phone` | required | User's phone
 
 
 ```shell
-curl -X PUT \
-  https://shoupbud.xyz/api/user/9 \
+curl -X POST \
+  https://shoupbud.xyz/api/user/ \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/x-www-form-urlencoded' \
-  -d 'name=Nipe%20Setiawan&gender=0&picture_url=gambar.jpg&phone=082276121178&addresss=medan'
+  -F name=Nipe \
+  -F gender=1 \
+  -F address=Medan \
+  -F 'picture_url=@Screenshot from 2017-04-18 15:00:18.png'
 ```
 
 
