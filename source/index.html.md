@@ -228,6 +228,7 @@ Parameter | Description
 --------- | -----------
 `keyword` | Hanya menampilkan produk sesuai dengan keywor
 `category_id` | Hanya menampilkan produk dengan kategori tertentu
+`vendor_id | Hanya menampilkan produk dengan vendor tertentu
 
 ```shell
 Menampilkan semua Produk
