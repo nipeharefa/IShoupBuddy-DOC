@@ -419,6 +419,52 @@ curl -X GET \
 }
 ```
 
+## Get Statistik Produk
+
+Parameter | | Description
+--------- | --------- | -----------
+`vendor_id` | required | Vendor Id
+`product_id` | required | Product Id
+`range` | optional | Range statistik dalam janga waktu tertentu. Misalnya `7` untuk 1 minggu terakhir, `30` untuk 1 bulan terakhir,  `90` untuk 3 bulan terakhir, dan seterusnya.
+
+```shell
+curl -X GET \
+  'http://skripsi.home.dev/api/statistic?vendor_id=44&product_id=31' \
+  -H 'cache-control: no-cache'
+```
+
+> Response Sukses (200)
+
+```json
+{
+  "status": "OK",
+  "message": null,
+  "statistic": [
+    {
+      "id": 3,
+      "value": 1000,
+      "date": "2017-02-09T14:58:29+00:00",
+      "vendor": 44,
+      "product": 31
+    },
+    {
+      "id": 4,
+      "value": 1000,
+      "date": "2017-05-09T14:58:29+00:00",
+      "vendor": 44,
+      "product": 31
+    },
+    {
+      "id": 5,
+      "value": 1525,
+      "date": "2017-05-10T02:57:05+00:00",
+      "vendor": 44,
+      "product": 31
+    }
+  ]
+}
+```
+
 # Promo
 
 ## Get Promo
