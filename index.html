@@ -640,6 +640,66 @@ curl -X GET <span class="se">\</span>
   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Produk tidak ditemukan"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h2 id="get-statistik-produk">Get Statistik Produk</h2>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th></th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">vendor_id</code></td>
+<td>required</td>
+<td>Vendor Id</td>
+</tr>
+<tr>
+<td><code class="prettyprint">product_id</code></td>
+<td>required</td>
+<td>Product Id</td>
+</tr>
+<tr>
+<td><code class="prettyprint">range</code></td>
+<td>optional</td>
+<td>Range statistik dalam janga waktu tertentu. Misalnya <code class="prettyprint">7</code> untuk 1 minggu terakhir, <code class="prettyprint">30</code> untuk 1 bulan terakhir,  <code class="prettyprint">90</code> untuk 3 bulan terakhir, dan seterusnya.</td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  <span class="s1">'http://skripsi.home.dev/api/statistic?vendor_id=44&amp;product_id=31'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre>
+<blockquote>
+<p>Response Sukses (200)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"statistic"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-09T14:58:29+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-09T14:58:29+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1525</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-10T02:57:05+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h1 id="promo">Promo</h1>
 
 <h2 id="get-promo">Get Promo</h2>
