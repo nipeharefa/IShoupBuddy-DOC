@@ -633,6 +633,11 @@ curl -X POST \
 
 ## Get Review
 
+
+Parameter | | Description
+--------- | --------- | -----------
+`user_id` | optional | Product ID
+
 ```json
 {
     "status": "OK",
