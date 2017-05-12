@@ -429,7 +429,7 @@ Parameter | | Description
 
 ```shell
 curl -X GET \
-  'http://skripsi.home.dev/api/statistic?vendor_id=44&product_id=31' \
+  'https://shoupbud.xyz/api/statistic?vendor_id=44&product_id=31' \
   -H 'cache-control: no-cache'
 ```
 
@@ -524,50 +524,32 @@ curl -X GET \
   "message": null
 }
 ```
+# Review
 
-# Wishlist
+## Create a Review
 
-## Get Account Wishlist
+<aside class="notice">
+Requires authentication.
+</aside>
 
-
-```shell
-curl -X GET \
-  https://shoupbud.xyz/api/wishlist \
-  -H 'accept: application/json' \
-  -H 'authorization: Bearer token' \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
-```
-
-> Resopnse Sukses
-
-```json
-{
-  "status": "OK",
-  "wishlist": [
-    {
-      "id": 15,
-      "user_id": 9,
-      "product_id": 15,
-      "created_at": "2017-04-25 04:32:51",
-      "updated_at": "2017-04-25 04:32:51"
-    }
-  ],
-  "message": null
-}
-```
-
-## Tambah Produk ke daftar Wishlist
+Parameter | | Description
+--------- | --------- | -----------
+`name` | required | User's name
+`product_id` | required | Product ID
+`vendor_id` | 'filename|blob' required | Vendor ID
+`rating` | required | Rating
+`body` | required | Review Text 
 
 ```shell
 curl -X POST \
-  https://shoupbud.xyz/api/wishlist \
+  https://shoupbud.xyz/api/review \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
-  -F product_id=1
-
+  -F product_id=31 \
+  -F vendor_id=44 \
+  -F rating=4 \
+  -F 'body=barangnya mantap dan bagus'
 ```
 
 > Response Sukses (200)
@@ -575,38 +557,160 @@ curl -X POST \
 ```json
 {
   "status": "OK",
-  "wishlist": {
-    "product_id": "15",
-    "user_id": 9,
-    "updated_at": "2017-04-25 04:32:51",
-    "created_at": "2017-04-25 04:32:51",
-    "id": 15
+  "review": {
+      "id": 76,
+      "rating": "4",
+      "body": "barangnya mantap dan bagus",
+      "sentimen": {
+        "detail": {
+          "pos": 0.615,
+          "neu": 0.308,
+          "neg": 0.077
+        },
+        "category": "pos"
+      },
+      "user": {
+        "id": 39,
+        "name": "Nipe",
+        "picture_url": "TO7eS8cBvo6wsUxF9PNd.jpg"
+      },
+      "product": {
+        "id": 31,
+        "name": "UHU Perekat Serbaguna",
+        "category": {
+            "id": 1,
+            "name": "Uncategorized",
+            "slug": "uncategorized",
+            "description": null
+        },
+        "barcode": 40206700407563,
+        "picture_url": {
+            "small": "https://shoupbud.xyz/image/small/xw6NAomKz8fxkLXbL86a.jpg",
+            "medium": "https://shoupbud.xyz/image/medium/xw6NAomKz8fxkLXbL86a.jpg",
+            "large": "https://shoupbud.xyz/image/large/xw6NAomKz8fxkLXbL86a.jpg"
+        },
+        "description": "",
+        "vendors": [
+            {
+                "id": 10,
+                "name": "UHU Perekat Serbaguna",
+                "picture_url": {
+                    "small": "https://shoupbud.xyz/images/small/xw6NAomKz8fxkLXbL86a.jpg",
+                    "medium": "https://shoupbud.xyz/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
+                    "large": "https://shoupbud.xyz/images/large/xw6NAomKz8fxkLXbL86a.jpg"
+                },
+                "price": 1525,
+                "price_string": 1525,
+                "barcode": "40206700407563",
+                "vendor": {
+                    "id": 44,
+                    "name": "PT. Alfamart Indonesia",
+                    "picture_url": null,
+                    "total_product": 1,
+                    "total_review": 0
+                }
+            }
+        ],
+        "total_review": 0,
+        "total_vendor": 1,
+        "total_rating": 0,
+        "minimum_price": 1525,
+        "minumumPrice": 1525,
+        "liked": true,
+        "recentReview": []
+      },
+      "vendor": {
+        "id": 44,
+        "name": "PT. Alfamart Indonesia",
+        "picture_url": null,
+        "total_product": 1,
+        "total_review": 0
+      }
   },
   "message": null
 }
 ```
 
-> Response Fail (400)
+## Get Review
 
 ```json
 {
-  "status": "ERROR",
-  "wishlist": null,
-  "message": "Data product tidak ditemukan"
+    "status": "OK",
+    "message": null,
+    "reviews": [
+        {
+            "id": 76,
+            "rating": 4,
+            "body": "barangnya mantap dan bagus",
+            "sentimen": {
+                "detail": {
+                    "pos": 0.615,
+                    "neu": 0.308,
+                    "neg": 0.077
+                },
+                "category": "pos"
+            },
+            "user": {
+                "id": 39,
+                "name": "Nipe",
+                "picture_url": "TO7eS8cBvo6wsUxF9PNd.jpg"
+            },
+            "product": {
+                "id": 31,
+                "name": "UHU Perekat Serbaguna",
+                "category": {
+                    "id": 1,
+                    "name": "Uncategorized",
+                    "slug": "uncategorized",
+                    "description": null
+                },
+                "barcode": 40206700407563,
+                "picture_url": {
+                    "small": "http://skripsi.home.dev/image/small/xw6NAomKz8fxkLXbL86a.jpg",
+                    "medium": "http://skripsi.home.dev/image/medium/xw6NAomKz8fxkLXbL86a.jpg",
+                    "large": "http://skripsi.home.dev/image/large/xw6NAomKz8fxkLXbL86a.jpg"
+                },
+                "description": "",
+                "vendors": [
+                    {
+                        "id": 10,
+                        "name": "UHU Perekat Serbaguna",
+                        "picture_url": {
+                            "small": "http://skripsi.home.dev/images/small/xw6NAomKz8fxkLXbL86a.jpg",
+                            "medium": "http://skripsi.home.dev/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
+                            "large": "http://skripsi.home.dev/images/large/xw6NAomKz8fxkLXbL86a.jpg"
+                        },
+                        "price": 1525,
+                        "price_string": 1525,
+                        "barcode": "40206700407563",
+                        "vendor": {
+                            "id": 44,
+                            "name": "PT. Alfamart Indonesia",
+                            "picture_url": null,
+                            "total_product": 1,
+                            "total_review": 0
+                        }
+                    }
+                ],
+                "total_review": 0,
+                "total_vendor": 1,
+                "total_rating": 0,
+                "minimum_price": 1525,
+                "minumumPrice": 1525,
+                "liked": true,
+                "recentReview": []
+            },
+            "vendor": {
+                "id": 44,
+                "name": "PT. Alfamart Indonesia",
+                "picture_url": null,
+                "total_product": 1,
+                "total_review": 0
+            }
+        }
+    ]
 }
 ```
-
-## Hapus Daftar Wishlist
-
-
-```shell
-curl -X DELETE \
-  https://shoupbud.xyz/api/wishlist/1 \
-  -H 'accept: application/json' \
-  -H 'authorization: Bearer token' \
-  -H 'cache-control: no-cache' 
-```
-
 
 # User
 
@@ -713,6 +817,87 @@ curl -X POST \
 }
 ```
 
+# Wishlist
+
+## Get Account Wishlist
+
+
+```shell
+curl -X GET \
+  https://shoupbud.xyz/api/wishlist \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+```
+
+> Resopnse Sukses
+
+```json
+{
+  "status": "OK",
+  "wishlist": [
+    {
+      "id": 15,
+      "user_id": 9,
+      "product_id": 15,
+      "created_at": "2017-04-25 04:32:51",
+      "updated_at": "2017-04-25 04:32:51"
+    }
+  ],
+  "message": null
+}
+```
+
+## Tambah Produk ke daftar Wishlist
+
+```shell
+curl -X POST \
+  https://shoupbud.xyz/api/wishlist \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+  -F product_id=1
+
+```
+
+> Response Sukses (200)
+
+```json
+{
+  "status": "OK",
+  "wishlist": {
+    "product_id": "15",
+    "user_id": 9,
+    "updated_at": "2017-04-25 04:32:51",
+    "created_at": "2017-04-25 04:32:51",
+    "id": 15
+  },
+  "message": null
+}
+```
+
+> Response Fail (400)
+
+```json
+{
+  "status": "ERROR",
+  "wishlist": null,
+  "message": "Data product tidak ditemukan"
+}
+```
+
+## Hapus Daftar Wishlist
+
+
+```shell
+curl -X DELETE \
+  https://shoupbud.xyz/api/wishlist/1 \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache' 
+```
 
 # Vendor
 
