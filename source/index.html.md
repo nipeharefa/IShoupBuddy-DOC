@@ -636,7 +636,9 @@ curl -X POST \
 
 Parameter | | Description
 --------- | --------- | -----------
-`user_id` | optional | Product ID
+`user_id` | optional | User ID
+`product_id` | optional | Product ID
+`vendor_id` | optional | Vendor ID
 
 ```json
 {
