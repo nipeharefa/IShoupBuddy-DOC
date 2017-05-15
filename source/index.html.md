@@ -104,41 +104,52 @@ curl -X GET \
 
 ```json
 {
-  "data": "OK",
-  "message": null,
-  "carts": {
-    "items": [
-      {
-        "id": 2,
-        "items": {
-          "id": 3,
-          "name": "Mylanta Obat Maag Liquid 150Ml",
-          "picture_url": {
-            "small": "https://shoupbud.xyz/images/small/hMFsDR4NDVq8BZ11TqrT.jpg",
-            "medium": "https://shoupbud.xyz/images/medium/hMFsDR4NDVq8BZ11TqrT.jpg",
-            "large": "https://shoupbud.xyz/images/large/hMFsDR4NDVq8BZ11TqrT.jpg"
+    "data": "OK",
+    "message": null,
+    "carts": {
+      "items": [
+        {
+          "id": 2,
+          "items": {
+            "id": 10,
+            "name": "UHU Perekat Serbaguna",
+            "picture_url": {
+                "small": "http://skripsi.home.dev/images/small/xw6NAomKz8fxkLXbL86a.jpg",
+                "medium": "http://skripsi.home.dev/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
+                "large": "http://skripsi.home.dev/images/large/xw6NAomKz8fxkLXbL86a.jpg"
+            },
+            "price": 1525,
+            "price_string": 1525,
+            "barcode": "40206700407563",
+            "vendor": {
+                "id": 44,
+                "name": "PT. Alfamart Indonesia",
+                "picture_url": null,
+                "total_product": 1,
+                "total_review": 0
+            }
           },
-          "price": 10000,
-          "price_string": 10000,
-          "barcode": "899275051226",
-          "vendor": {
-            "id": 44,
-            "name": "PT. Alfamart Indonesia",
-            "picture_url": null,
-            "total_product": 1,
-            "total_review": 0
-          }
-        },
-        "total": 100000
-      }
-    ],
-    "total": 100000,
-    "total_strings": ""
-  }
+          "total": 1525,
+          "quantity": 1
+        }
+      ],
+      "total": 1525,
+      "total_strings": ""
+    }
 }
 ```
 
 ## Add Product to Cart
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+product_id | Product Id
+vendor_id | Vendor ID
+quantity | Quantity
+
+Pada proses ini quantity bersifat `optional` dan mempunyai nilai default `1`.
 
 ```shell
 curl -X POST \
@@ -147,6 +158,7 @@ curl -X POST \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' \
   -F product_id=3 \
+  -F vendor_id= \ 
   -F quantity=2
 ```
 
@@ -154,11 +166,42 @@ curl -X POST \
 
 ```json
 {
-  "product_vendor_id": "3",
-  "identify_id": 39,
-  "updated_at": "2017-05-03 15:27:09",
-  "created_at": "2017-05-03 15:27:09",
-  "id": 3
+  "status": "OK",
+  "cart": {
+    "id": 4,
+    "items": {
+      "id": 10,
+      "name": "UHU Perekat Serbaguna",
+      "picture_url": {
+        "small": "http://skripsi.home.dev/images/small/xw6NAomKz8fxkLXbL86a.jpg",
+        "medium": "http://skripsi.home.dev/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
+        "large": "http://skripsi.home.dev/images/large/xw6NAomKz8fxkLXbL86a.jpg"
+      },
+      "price": 1525,
+      "price_string": 1525,
+      "barcode": "40206700407563",
+      "vendor": {
+        "id": 44,
+        "name": "PT. Alfamart Indonesia",
+        "picture_url": null,
+        "total_product": 1,
+        "total_review": 0
+      }
+    },
+    "total": 4575,
+    "quantity": "3"
+  },
+  "message": "Cart added"
+}
+```
+
+> Response Fail(400)
+
+```json
+{
+  "status": "ERROR",
+  "cart": null,
+  "message": "Cek input"
 }
 ```
 
