@@ -205,6 +205,90 @@ curl -X POST \
 }
 ```
 
+## Update Cart
+
+
+Parameter | Description
+--------- | -----------
+cart_id | Cart ID
+
+
+```shell
+curl -X PUT \
+  http://skripsi.home.dev/api/cart/2 \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache' \
+  -d quantity=1
+```
+
+> Response Sukses(200)
+
+```json
+{
+  "status": "OK",
+  "cart": {
+    "id": 2,
+    "items": {
+      "id": 10,
+      "name": "UHU Perekat Serbaguna",
+      "picture_url": {
+        "small": "http://skripsi.home.dev/images/small/xw6NAomKz8fxkLXbL86a.jpg",
+        "medium": "http://skripsi.home.dev/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
+        "large": "http://skripsi.home.dev/images/large/xw6NAomKz8fxkLXbL86a.jpg"
+      },
+      "price": 1525,
+      "price_string": 1525,
+      "barcode": "40206700407563",
+      "vendor": {
+        "id": 44,
+        "name": "PT. Alfamart Indonesia",
+        "picture_url": null,
+        "total_product": 1,
+        "total_review": 0
+      }
+    },
+    "total": 1525,
+    "quantity": "1"
+  },
+  "messaage": "updated"
+}
+```
+
+> Response Fail (400)
+
+```json
+{
+  "status": "ERROR",
+  "message": "No query",
+  "cart": null
+}
+```
+
+## Delete Cart
+
+Parameter | Description
+--------- | -----------
+cart_id | Cart ID
+
+
+```shell
+curl -X DELETE \
+  http://skripsi.home.dev/api/cart/cart_id \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache'
+```
+
+> Response Fail (400)
+
+```json
+{
+  "status": "ERROR",
+  "message": "Something wrong"
+}
+```
+
 # Category
 
 ## Get List Category
