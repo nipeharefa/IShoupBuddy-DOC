@@ -10,6 +10,16 @@ toc_footers:
 
 includes:
   - authentication
+  - cart
+  - category
+  - image
+  - product
+  - promo
+  - review
+  - saldo
+  - user
+  - vendor
+  - wishlist
   - errors
 
 search: true
