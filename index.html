@@ -1257,6 +1257,72 @@ Requires authentication.
 </span></code></pre>
           <h1 id="saldo">Saldo</h1>
 
+<h2 id="tambah-nominal-saldo">Tambah Nominal Saldo</h2>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th></th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>nominal</td>
+<td>required,integer</td>
+<td>Nominal topup saldo</td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  http://skripsi.home.dev/api/saldo <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
+  -F <span class="nv">nominal</span><span class="o">=</span>100000
+</code></pre>
+<blockquote>
+<p>Response Sukses</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">100093</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"issueDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-04T14:33:03+00:00"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="get-saldo">Get Saldo</h2>
+<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+  http://skripsi.home.dev/api/saldo <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mi">100093</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"history"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">100093</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nominal_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 100.093"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nipe Harefa Test Other User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TO7eS8cBvo6wsUxF9PNd.jpg"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saldo"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-04T14:33:03+00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"approve"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/admin/transaction/52/approve"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cancel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/admin/transaction/52/cancel"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
           <h1 id="user">User</h1>
 
 <h2 id="get-user-info">Get User Info</h2>
