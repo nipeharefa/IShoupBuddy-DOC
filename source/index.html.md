@@ -17,6 +17,7 @@ includes:
   - promo
   - review
   - saldo
+  - transaction
   - user
   - vendor
   - wishlist
