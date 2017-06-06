@@ -12,7 +12,7 @@
 
 ```shell
 curl -X POST \
-  http://skripsi.home.dev/api/saldo \
+  https://shoupbud.xyz/api/saldo \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -F nominal=100000
@@ -38,7 +38,7 @@ curl -X POST \
 
 ```shell
 curl -X GET \
-  http://skripsi.home.dev/api/saldo \
+  https://shoupbud.xyz/api/saldo \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
 ```

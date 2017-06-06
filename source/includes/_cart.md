@@ -25,9 +25,9 @@ curl -X GET \
             "id": 10,
             "name": "UHU Perekat Serbaguna",
             "picture_url": {
-                "small": "http://skripsi.home.dev/images/small/xw6NAomKz8fxkLXbL86a.jpg",
-                "medium": "http://skripsi.home.dev/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
-                "large": "http://skripsi.home.dev/images/large/xw6NAomKz8fxkLXbL86a.jpg"
+                "small": "https://shoupbud.xyz/images/small/xw6NAomKz8fxkLXbL86a.jpg",
+                "medium": "https://shoupbud.xyz/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
+                "large": "https://shoupbud.xyz/images/large/xw6NAomKz8fxkLXbL86a.jpg"
             },
             "price": 1525,
             "price_string": 1525,
@@ -84,9 +84,9 @@ curl -X POST \
       "id": 10,
       "name": "UHU Perekat Serbaguna",
       "picture_url": {
-        "small": "http://skripsi.home.dev/images/small/xw6NAomKz8fxkLXbL86a.jpg",
-        "medium": "http://skripsi.home.dev/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
-        "large": "http://skripsi.home.dev/images/large/xw6NAomKz8fxkLXbL86a.jpg"
+        "small": "https://shoupbud.xyz/images/small/xw6NAomKz8fxkLXbL86a.jpg",
+        "medium": "https://shoupbud.xyz/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
+        "large": "https://shoupbud.xyz/images/large/xw6NAomKz8fxkLXbL86a.jpg"
       },
       "price": 1525,
       "price_string": 1525,
@@ -126,7 +126,7 @@ cart_id | Cart ID
 
 ```shell
 curl -X PUT \
-  http://skripsi.home.dev/api/cart/2 \
+  https://shoupbud.xyz/api/cart/2 \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' \
@@ -144,9 +144,9 @@ curl -X PUT \
       "id": 10,
       "name": "UHU Perekat Serbaguna",
       "picture_url": {
-        "small": "http://skripsi.home.dev/images/small/xw6NAomKz8fxkLXbL86a.jpg",
-        "medium": "http://skripsi.home.dev/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
-        "large": "http://skripsi.home.dev/images/large/xw6NAomKz8fxkLXbL86a.jpg"
+        "small": "https://shoupbud.xyz/images/small/xw6NAomKz8fxkLXbL86a.jpg",
+        "medium": "https://shoupbud.xyz/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
+        "large": "https://shoupbud.xyz/images/large/xw6NAomKz8fxkLXbL86a.jpg"
       },
       "price": 1525,
       "price_string": 1525,
@@ -185,7 +185,7 @@ cart_id | Cart ID
 
 ```shell
 curl -X DELETE \
-  http://skripsi.home.dev/api/cart/cart_id \
+  https://shoupbud.xyz/api/cart/cart_id \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache'

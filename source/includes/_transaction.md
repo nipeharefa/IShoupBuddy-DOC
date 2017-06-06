@@ -10,12 +10,12 @@
 
 ### HTTP Request
 
-`POST http://skripsi.home.dev/api/transaction`
+`POST https://shoupbud.xyz/api/transaction`
 
 
 ```shell
 curl -X GET \
-  http://skripsi.home.dev/api/transaction \
+  https://shoupbud.xyz/api/transaction \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache'
@@ -53,9 +53,9 @@ curl -X GET \
         "id": 11,
         "name": "Mylanta Obat Maag Liquid 150Ml",
         "picture_url": {
-            "small": "http://skripsi.home.dev/image/small/hMFsDR4NDVq8BZ11TqrT.jpg",
-            "medium": "http://skripsi.home.dev/image/medium/hMFsDR4NDVq8BZ11TqrT.jpg",
-            "large": "http://skripsi.home.dev/image/large/hMFsDR4NDVq8BZ11TqrT.jpg"
+            "small": "https://shoupbud.xyz/image/small/hMFsDR4NDVq8BZ11TqrT.jpg",
+            "medium": "https://shoupbud.xyz/image/medium/hMFsDR4NDVq8BZ11TqrT.jpg",
+            "large": "https://shoupbud.xyz/image/large/hMFsDR4NDVq8BZ11TqrT.jpg"
         },
         "price": 100000,
         "price_string": "Rp. 100.000",
