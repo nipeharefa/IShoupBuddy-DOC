@@ -56,8 +56,7 @@ curl -X GET \
 
 Parameter | Description
 --------- | -----------
-product_id | Product Id
-vendor_id | Vendor ID
+product_vendor_id | Product Vendor Id
 quantity | Quantity
 
 Pada proses ini quantity bersifat `optional` dan mempunyai nilai default `1`.
@@ -68,8 +67,7 @@ curl -X POST \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' \
-  -F product_id=3 \
-  -F vendor_id= \ 
+  -F product_vendor_id= \ 
   -F quantity=2
 ```
 
@@ -77,32 +75,45 @@ curl -X POST \
 
 ```json
 {
-  "status": "OK",
-  "cart": {
-    "id": 4,
-    "items": {
-      "id": 10,
-      "name": "UHU Perekat Serbaguna",
-      "picture_url": {
-        "small": "https://shoupbud.xyz/images/small/xw6NAomKz8fxkLXbL86a.jpg",
-        "medium": "https://shoupbud.xyz/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
-        "large": "https://shoupbud.xyz/images/large/xw6NAomKz8fxkLXbL86a.jpg"
-      },
-      "price": 1525,
-      "price_string": 1525,
-      "barcode": "40206700407563",
-      "vendor": {
+    "cart": {
         "id": 44,
-        "name": "PT. Alfamart Indonesia",
-        "picture_url": null,
-        "total_product": 1,
-        "total_review": 0
-      }
+        "name": "PT. Alfamart Indonesia OK",
+        "email": "info@alfamart.com",
+        "phone": "6282229111",
+        "picture_url": "jAYeIlTucpi7gZh9qhYG.jpg",
+        "saldo": 0,
+        "role": 2,
+        "address": "asdfasdf",
+        "confirmed": 1,
+        "latitude": null,
+        "longitude": 98.61,
+        "created_at": "2017-04-26 14:30:01",
+        "updated_at": "2017-06-14 14:15:18",
+        "vendor": {
+            "id": 44,
+            "name": "PT. Alfamart Indonesia OK",
+            "email": "info@alfamart.com",
+            "confirmed": true,
+            "picture_url": "jAYeIlTucpi7gZh9qhYG.jpg",
+            "total_product": 6,
+            "total_review": 0,
+            "lat": null,
+            "lng": 98.61
+        },
+        "item": [
+            {
+                "id": 4,
+                "cart_id": 3,
+                "product_vendor_id": 10,
+                "quantity": 3,
+                "price": 4575,
+                "created_at": "2017-06-30 23:18:44",
+                "updated_at": "2017-06-30 23:18:44"
+            }
+        ]
     },
-    "total": 4575,
-    "quantity": "3"
-  },
-  "message": "Cart added"
+    "message": "Added",
+    "status": "OK"
 }
 ```
 
@@ -119,50 +130,68 @@ curl -X POST \
 ## Update Cart
 
 
+### Parameters
+
 Parameter | Description
 --------- | -----------
-cart_id | Cart ID
+cartId | Detail Cart ID
+cartDetailId | Detail Cart ID
 
 
 ```shell
 curl -X PUT \
-  https://shoupbud.xyz/api/cart/2 \
+  https://shoupbud.xyz/api/cart/cartId/detail/cartDetailId \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache' \
-  -d quantity=1
+  -d quantity=2
 ```
 
 > Response Sukses(200)
 
 ```json
 {
-  "status": "OK",
-  "cart": {
-    "id": 2,
-    "items": {
-      "id": 10,
-      "name": "UHU Perekat Serbaguna",
-      "picture_url": {
-        "small": "https://shoupbud.xyz/images/small/xw6NAomKz8fxkLXbL86a.jpg",
-        "medium": "https://shoupbud.xyz/images/medium/xw6NAomKz8fxkLXbL86a.jpg",
-        "large": "https://shoupbud.xyz/images/large/xw6NAomKz8fxkLXbL86a.jpg"
-      },
-      "price": 1525,
-      "price_string": 1525,
-      "barcode": "40206700407563",
-      "vendor": {
+    "cart": {
+        "id": 44{
+    "cart": {
         "id": 44,
-        "name": "PT. Alfamart Indonesia",
-        "picture_url": null,
-        "total_product": 1,
-        "total_review": 0
-      }
+        "name": "PT. Alfamart Indonesia OK",
+        "email": "info@alfamart.com",
+        "phone": "6282229111",
+        "picture_url": "jAYeIlTucpi7gZh9qhYG.jpg",
+        "saldo": 0,
+        "role": 2,
+        "address": "asdfasdf",
+        "confirmed": 1,
+        "latitude": null,
+        "longitude": 98.61,
+        "created_at": "2017-04-26 14:30:01",
+        "updated_at": "2017-06-14 14:15:18",
+        "vendor": {
+            "id": 44,
+            "name": "PT. Alfamart Indonesia OK",
+            "email": "info@alfamart.com",
+            "confirmed": true,
+            "picture_url": "jAYeIlTucpi7gZh9qhYG.jpg",
+            "total_product": 6,
+            "total_review": 0,
+            "lat": null,
+            "lng": 98.61
+        },
+        "item": [
+            {
+                "id": 3,
+                "cart_id": 3,
+                "product_vendor_id": 10,
+                "quantity": 2,
+                "price": 3050,
+                "created_at": "2017-06-30 23:01:04",
+                "updated_at": "2017-06-30 23:08:55"
+            }
+        ]
     },
-    "total": 1525,
-    "quantity": "1"
-  },
-  "messaage": "updated"
+    "message": null,
+    "status": "OK"
 }
 ```
 
@@ -189,6 +218,36 @@ curl -X DELETE \
   -H 'accept: application/json' \
   -H 'authorization: Bearer token' \
   -H 'cache-control: no-cache'
+```
+
+> Response Fail (400)
+
+```json
+{
+  "status": "ERROR",
+  "message": "Something wrong"
+}
+```
+
+## Delete Item Cart
+
+Parameter | Description
+--------- | -----------
+cartId | Detail Cart ID
+cartDetailId | Detail Cart ID
+
+
+```shell
+curl -X DELETE \
+  https://shoupbud.xyz/api/cart/cartId/detail/cartDetailId \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -H 'cache-control: no-cache'
+```
+
+> Response Success (204)
+
+```json
 ```
 
 > Response Fail (400)
