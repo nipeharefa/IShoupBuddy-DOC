@@ -379,12 +379,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>product_id</td>
-<td>Product Id</td>
-</tr>
-<tr>
-<td>vendor_id</td>
-<td>Vendor ID</td>
+<td>product_vendor_id</td>
+<td>Product Vendor Id</td>
 </tr>
 <tr>
 <td>quantity</td>
@@ -398,40 +394,52 @@
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -F <span class="nv">product_id</span><span class="o">=</span>3 <span class="se">\</span>
-  -F <span class="nv">vendor_id</span><span class="o">=</span> <span class="se">\ </span>
+  -F <span class="nv">product_vendor_id</span><span class="o">=</span> <span class="se">\ </span>
   -F <span class="nv">quantity</span><span class="o">=</span>2
 </code></pre>
 <blockquote>
 <p>Response Sukses (200)</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UHU Perekat Serbaguna"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/small/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/medium/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/large/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1525</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_string"</span><span class="p">:</span><span class="w"> </span><span class="mi">1525</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40206700407563"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"cart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_product"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_review"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia OK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@alfamart.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6282229111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jAYeIlTucpi7gZh9qhYG.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">98.61</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-26 14:30:01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-14 14:15:18"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia OK"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@alfamart.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jAYeIlTucpi7gZh9qhYG.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_product"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_review"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">98.61</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cart_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"product_vendor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">4575</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-30 23:18:44"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-30 23:18:44"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4575</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cart added"</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Added"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -445,6 +453,8 @@
 </span></code></pre>
 <h2 id="update-cart">Update Cart</h2>
 
+<h3 id="parameters">Parameters</h3>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -452,47 +462,66 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>cart_id</td>
-<td>Cart ID</td>
+<td>cartId</td>
+<td>Detail Cart ID</td>
+</tr>
+<tr>
+<td>cartDetailId</td>
+<td>Detail Cart ID</td>
 </tr>
 </tbody></table>
 <pre class="highlight shell tab-shell"><code>curl -X PUT <span class="se">\</span>
-  https://shoupbud.xyz/api/cart/2 <span class="se">\</span>
+  https://shoupbud.xyz/api/cart/cartId/detail/cartDetailId <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
-  -d <span class="nv">quantity</span><span class="o">=</span>1
+  -d <span class="nv">quantity</span><span class="o">=</span>2
 </code></pre>
 <blockquote>
 <p>Response Sukses(200)</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UHU Perekat Serbaguna"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/small/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/medium/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/images/large/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1525</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price_string"</span><span class="p">:</span><span class="w"> </span><span class="mi">1525</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40206700407563"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"cart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"cart"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_product"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"total_review"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia OK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@alfamart.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6282229111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jAYeIlTucpi7gZh9qhYG.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">98.61</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-26 14:30:01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-14 14:15:18"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia OK"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@alfamart.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jAYeIlTucpi7gZh9qhYG.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_product"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"total_review"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">98.61</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cart_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"product_vendor_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">3050</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-30 23:01:04"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-30 23:08:55"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1525</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"messaage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updated"</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -523,6 +552,41 @@
   -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
   -H <span class="s1">'cache-control: no-cache'</span>
 </code></pre>
+<blockquote>
+<p>Response Fail (400)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something wrong"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="delete-item-cart">Delete Item Cart</h2>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cartId</td>
+<td>Detail Cart ID</td>
+</tr>
+<tr>
+<td>cartDetailId</td>
+<td>Detail Cart ID</td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="se">\</span>
+  https://shoupbud.xyz/api/cart/cartId/detail/cartDetailId <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span>
+</code></pre>
+<blockquote>
+<p>Response Success (204)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code></code></pre>
 <blockquote>
 <p>Response Fail (400)</p>
 </blockquote>
