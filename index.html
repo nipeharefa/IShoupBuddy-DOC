@@ -1463,70 +1463,101 @@ Requires authentication.
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST https://shoupbud.xyz/api/transaction</code></p>
-<pre class="highlight shell tab-shell"><code>curl -X GET <span class="se">\</span>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>name</th>
+<th></th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cart_id</td>
+<td>required</td>
+<td>array</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   https://shoupbud.xyz/api/transaction <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: Bearer token'</span> <span class="se">\</span>
-  -H <span class="s1">'cache-control: no-cache'</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -H <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'postman-token: b41358a3-0bbf-8da4-880c-21e98160aae8'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+  "cart_id": [1]
+}'</span>
 </code></pre>
 <blockquote>
 <p>Response Sukses</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">56</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">400000</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"nominal_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 400.000"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nipe Harefa Test Other User"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TO7eS8cBvo6wsUxF9PNd.jpg"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fail / Cancel"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-05T10:19:34+00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"approve"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/admin/transaction/56/approve"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"cancel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/admin/transaction/56/cancel"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"harga"</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"harga_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 200.000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">400000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 400.000"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mylanta Obat Maag Liquid 150Ml"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/small/hMFsDR4NDVq8BZ11TqrT.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/medium/hMFsDR4NDVq8BZ11TqrT.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shoupbud.xyz/image/large/hMFsDR4NDVq8BZ11TqrT.jpg"</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">4575</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nominal_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 4.575"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nipe Harefa Test Other User"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TO7eS8cBvo6wsUxF9PNd.jpg"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 100.000"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"899275051226"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@alfamart.com"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"total_product"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"total_review"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-      </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-01T22:05:41+07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"approve"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/admin/transaction/43/approve"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cancel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/api/admin/transaction/43/cancel"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UHU Perekat Serbaguna"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"harga"</span><span class="p">:</span><span class="w"> </span><span class="mi">1525</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"harga_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 1.525"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">4575</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"total_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 4.575"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UHU Perekat Serbaguna"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/small/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/medium/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/large/xw6NAomKz8fxkLXbL86a.jpg"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1525</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 1.525"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40206700407563"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT. Alfamart Indonesia OK"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@alfamart.com"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"picture_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jAYeIlTucpi7gZh9qhYG.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"total_product"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"total_review"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">98.61</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>Response Fail(400)</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saldo tidak cukup"</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No query results for model [App</span><span class="se">\\</span><span class="s2">Models</span><span class="se">\\</span><span class="s2">Cart] 1"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
           <h1 id="user">User</h1>
