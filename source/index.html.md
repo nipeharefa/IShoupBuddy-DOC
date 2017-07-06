@@ -12,6 +12,7 @@ includes:
   - authentication
   - cart
   - category
+  - compare
   - image
   - product
   - promo
