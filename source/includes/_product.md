@@ -245,3 +245,117 @@ curl -X GET \
   ]
 }
 ```
+
+## Pagination
+
+### Parameters
+
+| name    |              | Description   |
+|---------|--------------|---------------|
+| page    | default = 1  | Page          |
+| peritem | default = 10 | Item Per Page |
+
+```sh
+curl -X GET \
+  'https://shoupbud.xyz/api/product?page=1&perpage=1' \
+  -H 'cache-control: no-cache' \
+```
+
+```json
+{
+    "status": "OK",
+    "products": [
+        {
+            "id": 8,
+            "name": "LOTTE xylitol chewing gum fresh mint",
+            "category": {
+                "id": 4,
+                "name": "Snacks",
+                "slug": "snacks",
+                "picture_url": "etwebdUm4IzqQYvBHakE.jpg",
+                "description": null
+            },
+            "barcode": 8990333164055,
+            "description": "Lotte Xylitol merupakan permen karet yang memiliki fungsi mengurangi resiko gigi berlubang.",
+            "picture_url": {
+                "small": "https://shoupbud.xyz/image/small/6Py4Ti42Tqm1gQu50gRF.jpg",
+                "medium": "https://shoupbud.xyz/image/medium/6Py4Ti42Tqm1gQu50gRF.jpg",
+                "large": "https://shoupbud.xyz/image/large/6Py4Ti42Tqm1gQu50gRF.jpg"
+            },
+            "vendors": [
+                {
+                    "id": 5,
+                    "name": "LOTTE xylitol chewing gum fresh mint",
+                    "picture_url": {
+                        "small": "https://shoupbud.xyz/image/small/6Py4Ti42Tqm1gQu50gRF.jpg",
+                        "medium": "https://shoupbud.xyz/image/medium/6Py4Ti42Tqm1gQu50gRF.jpg",
+                        "large": "https://shoupbud.xyz/image/large/6Py4Ti42Tqm1gQu50gRF.jpg"
+                    },
+                    "price": 14500,
+                    "price_string": "Rp. 14.500",
+                    "barcode": "8990333164055",
+                    "vendor": {
+                        "id": 3,
+                        "name": "Hypermart Sun Plaza",
+                        "email": "hypermart@hypermart.com",
+                        "confirmed": true,
+                        "picture_url": "fj89Ps8n9eL1rmAJnedb.jpg",
+                        "total_product": 4,
+                        "total_review": 0,
+                        "lat": 3.58,
+                        "lng": 98.67
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "LOTTE xylitol chewing gum fresh mint",
+                    "picture_url": {
+                        "small": "https://shoupbud.xyz/image/small/6Py4Ti42Tqm1gQu50gRF.jpg",
+                        "medium": "https://shoupbud.xyz/image/medium/6Py4Ti42Tqm1gQu50gRF.jpg",
+                        "large": "https://shoupbud.xyz/image/large/6Py4Ti42Tqm1gQu50gRF.jpg"
+                    },
+                    "price": 13600,
+                    "price_string": "Rp. 13.600",
+                    "barcode": "8990333164055",
+                    "vendor": {
+                        "id": 10,
+                        "name": "PT Indomaret Sentosa",
+                        "email": "info@indomaret.com",
+                        "confirmed": true,
+                        "picture_url": null,
+                        "total_product": 4,
+                        "total_review": 0,
+                        "lat": 3.62,
+                        "lng": 98.69
+                    }
+                }
+            ],
+            "total_review": 2,
+            "total_vendor": 2,
+            "total_rating": 2,
+            "avg_rating": 3,
+            "minimum_price": 13600,
+            "minimum_price_string": "Rp. 13.600",
+            "minumumPrice": 13600,
+            "liked": false,
+            "recentReview": [],
+            "summary": {
+                "mean": {
+                    "pos": 0.325,
+                    "neg": 0.35,
+                    "neu": 0.325
+                },
+                "count": {
+                    "pos": 1,
+                    "neg": 1,
+                    "neu": 0
+                }
+            }
+        }
+    ],
+    "message": null,
+    "link": {
+        "next": "http://shoupbud.xyz/api/product?page=2"
+    }
+}
+```
