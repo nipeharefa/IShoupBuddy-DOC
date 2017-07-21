@@ -70,3 +70,42 @@ curl -X GET \
   "status": "OK"
 }
 ```
+
+## Upload Attachment
+
+| name  |      | Description |
+|-------|------|-------------|
+| image | file | Image       |
+
+
+```sh
+curl -X POST \
+  http://localhost:3000/api/transaction/8/upload \
+  -H 'accept: application/json' \
+  -H 'authorization: token' \
+  -F image=@ycuOT5oO2r5BSe8RsRkE.jpg
+```
+
+```json
+{
+    "transaction": {
+        "id": 8,
+        "nominal": 10067,
+        "nominal_string": "Rp. 10.067",
+        "user": {
+            ...
+        },
+        "type": "Saldo",
+        "status": 3,
+        "status_string": "Attachment Uploaded",
+        "updated_at": "2017-07-21T10:49:34+07:00",
+        ...
+        "shipment": null,
+        "attachments": {
+            "small": "http://skripsi.home.dev/image/small/8_1500608974.jpg",
+            "medium": "http://skripsi.home.dev/image/medium/8_1500608974.jpg",
+            "large": "http://skripsi.home.dev/image/large/8_1500608974.jpg"
+        }
+    }
+}
+```
