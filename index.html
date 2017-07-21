@@ -1727,13 +1727,18 @@ Requires authentication.
 </tr>
 </thead><tbody>
 <tr>
+<td>id</td>
+<td>integer</td>
+<td>Id Transaksi</td>
+</tr>
+<tr>
 <td>image</td>
 <td>file</td>
 <td>Image</td>
 </tr>
 </tbody></table>
 <pre class="highlight sh tab-shell"><code>curl -X POST <span class="se">\</span>
-  http://localhost:3000/api/transaction/8/upload <span class="se">\</span>
+  http://localhost:3000/api/transaction/<span class="o">{</span>id<span class="o">}</span>/upload <span class="se">\</span>
   -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   -H <span class="s1">'authorization: token'</span> <span class="se">\</span>
   -F <span class="nv">image</span><span class="o">=</span>@ycuOT5oO2r5BSe8RsRkE.jpg
