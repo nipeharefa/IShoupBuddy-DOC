@@ -73,14 +73,15 @@ curl -X GET \
 
 ## Upload Attachment
 
-| name  |      | Description |
-|-------|------|-------------|
-| image | file | Image       |
+| name  |         | Description  |
+|-------|---------|--------------|
+| id    | integer | Id Transaksi |
+| image | file    | Image        |
 
 
 ```sh
 curl -X POST \
-  http://localhost:3000/api/transaction/8/upload \
+  http://localhost:3000/api/transaction/{id}/upload \
   -H 'accept: application/json' \
   -H 'authorization: token' \
   -F image=@ycuOT5oO2r5BSe8RsRkE.jpg
