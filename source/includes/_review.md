@@ -300,3 +300,31 @@ curl -X PUT \
   "message": null
 }
 ```
+
+
+## Report Review
+
+### Parameters
+
+| name      |         | Description |
+|-----------|---------|-------------|
+| review_id | integer | Review Id   |
+
+
+```sh
+curl -X POST \
+  https://shoupbud.xyz/api/report \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token' \
+  -F review_id=1
+```
+
+```json
+{
+    "id": 5,
+    "user_id": 6,
+    "review_id": 1,
+    "created_at": "2017-07-19 01:05:51",
+    "updated_at": "2017-07-19 01:05:51"
+}
+```

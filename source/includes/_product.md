@@ -282,80 +282,153 @@ curl -X GET \
                 "medium": "https://shoupbud.xyz/image/medium/6Py4Ti42Tqm1gQu50gRF.jpg",
                 "large": "https://shoupbud.xyz/image/large/6Py4Ti42Tqm1gQu50gRF.jpg"
             },
-            "vendors": [
-                {
-                    "id": 5,
-                    "name": "LOTTE xylitol chewing gum fresh mint",
-                    "picture_url": {
-                        "small": "https://shoupbud.xyz/image/small/6Py4Ti42Tqm1gQu50gRF.jpg",
-                        "medium": "https://shoupbud.xyz/image/medium/6Py4Ti42Tqm1gQu50gRF.jpg",
-                        "large": "https://shoupbud.xyz/image/large/6Py4Ti42Tqm1gQu50gRF.jpg"
-                    },
-                    "price": 14500,
-                    "price_string": "Rp. 14.500",
-                    "barcode": "8990333164055",
-                    "vendor": {
-                        "id": 3,
-                        "name": "Hypermart Sun Plaza",
-                        "email": "hypermart@hypermart.com",
-                        "confirmed": true,
-                        "picture_url": "fj89Ps8n9eL1rmAJnedb.jpg",
-                        "total_product": 4,
-                        "total_review": 0,
-                        "lat": 3.58,
-                        "lng": 98.67
-                    }
-                },
-                {
-                    "id": 6,
-                    "name": "LOTTE xylitol chewing gum fresh mint",
-                    "picture_url": {
-                        "small": "https://shoupbud.xyz/image/small/6Py4Ti42Tqm1gQu50gRF.jpg",
-                        "medium": "https://shoupbud.xyz/image/medium/6Py4Ti42Tqm1gQu50gRF.jpg",
-                        "large": "https://shoupbud.xyz/image/large/6Py4Ti42Tqm1gQu50gRF.jpg"
-                    },
-                    "price": 13600,
-                    "price_string": "Rp. 13.600",
-                    "barcode": "8990333164055",
-                    "vendor": {
-                        "id": 10,
-                        "name": "PT Indomaret Sentosa",
-                        "email": "info@indomaret.com",
-                        "confirmed": true,
-                        "picture_url": null,
-                        "total_product": 4,
-                        "total_review": 0,
-                        "lat": 3.62,
-                        "lng": 98.69
-                    }
-                }
-            ],
-            "total_review": 2,
-            "total_vendor": 2,
-            "total_rating": 2,
-            "avg_rating": 3,
-            "minimum_price": 13600,
-            "minimum_price_string": "Rp. 13.600",
-            "minumumPrice": 13600,
-            "liked": false,
-            "recentReview": [],
-            "summary": {
-                "mean": {
-                    "pos": 0.325,
-                    "neg": 0.35,
-                    "neu": 0.325
-                },
-                "count": {
-                    "pos": 1,
-                    "neg": 1,
-                    "neu": 0
-                }
-            }
+            ....
         }
     ],
     "message": null,
     "link": {
         "next": "http://shoupbud.xyz/api/product?page=2"
+    }
+}
+```
+
+## Get Popular Product
+
+### Parameters
+
+| name    |              | Description   |
+|---------|--------------|---------------|
+| page    | default = 1  | Page          |
+| perpage | default = 10 | Item Per Page |
+
+
+```sh
+curl -X GET \
+  'https://shoupbud.xyz/api/product/trending?perpage=10&page=1' \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token'
+```
+
+```json
+{
+    "messge": null,
+    "products": [
+        {
+            "id": 18,
+            "name": "Mylanta Antasid Obat Maag 150ml",
+            "category": {
+                "id": 9,
+                "name": "Uncategorized",
+                "slug": "uncategorized",
+                "picture_url": null,
+                "description": null
+            },
+            "barcode": 899275051226,
+            "description": "Alice, 'because I'm not looking for it, you may SIT down,' the King said, with a sudden burst of tears, 'I do wish they COULD! I'm sure I can't be civil, you'd better ask HER about it.' 'She's in.",
+            "picture_url": {
+                "small": "http://https://shoupbud.xyz/image/small/skripsi-mylanta-antasid-obat-maag-150ml.jpg",
+                "medium": "http://https://shoupbud.xyz/image/medium/skripsi-mylanta-antasid-obat-maag-150ml.jpg",
+                "large": "http://https://shoupbud.xyz/image/large/skripsi-mylanta-antasid-obat-maag-150ml.jpg"
+            },
+            "vendors": [
+                {
+                    "id": 14,
+                    "name": "Mylanta Antasid Obat Maag 150ml",
+                    "picture_url": {
+                        "small": "http://https://shoupbud.xyz/image/small/skripsi-mylanta-antasid-obat-maag-150ml.jpg",
+                        "medium": "http://https://shoupbud.xyz/image/medium/skripsi-mylanta-antasid-obat-maag-150ml.jpg",
+                        "large": "http://https://shoupbud.xyz/image/large/skripsi-mylanta-antasid-obat-maag-150ml.jpg"
+                    },
+                    "price": 3586,
+                    "price_string": "Rp. 3.586",
+                    "barcode": "899275051226",
+                    "vendor": {
+                        "id": 9,
+                        "name": "Dr. Lavinia Wintheiser III",
+                        "email": "nellie15@example.net",
+                        "confirmed": true,
+                        "picture_url": "skripsi-gilfoyle.jpg",
+                        "total_product": 10,
+                        "total_review": 0,
+                        "lat": -61.03305,
+                        "lng": 118.7045
+                    }
+                }
+            ],
+            "total_review": 1,
+            "total_vendor": 1,
+            "total_rating": 1,
+            "avg_rating": 4,
+            "minimum_price": 3586,
+            "minimum_price_string": "Rp. 3.586",
+            "minumumPrice": 3586,
+            "liked": false,
+            "recentReview": [],
+            "summary": {
+                "mean": {
+                    "pos": 0.667,
+                    "neg": 0.167,
+                    "neu": 0.167
+                },
+                "count": {
+                    "pos": 1,
+                    "neg": 0,
+                    "neu": 0
+                }
+            },
+            "summary_string": "pos"
+        }
+    ],
+    "pagination": {
+        "prev": null,
+        "next": null,
+        "total": 1
+    }
+}
+```
+
+
+## Get Newest Product
+
+
+### Parameters
+
+| name    |              | Description   |
+|---------|--------------|---------------|
+| page    | default = 1  | Page          |
+| perpage | default = 10 | Item Per Page |
+
+
+```sh
+curl -X GET \
+  'https://shoupbud.xyz/api/product/newest?perpage=1&page=1' \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer token'
+```
+
+```json
+{
+    "messge": null,
+    "products": [
+        {
+            "id": 15,
+            "name": "Aqua Mineral Botol 600ml",
+            "category": {
+                "id": 9,
+                "name": "Uncategorized",
+                "slug": "uncategorized",
+                "picture_url": null,
+                "description": null
+            },
+            "barcode": 3030552300010,
+            "description": "Alice, that she knew she had known them all her life. Indeed, she had accidentally upset the week before. 'Oh, I BEG your pardon!' cried Alice (she was rather glad there WAS no one could possibly.",
+            ....
+        }
+    ],
+    "pagination": {
+        "prev": null,
+        "next": "http://https://shoupbud.xyz/api/product/newest?page=2",
+        "total": 10
     }
 }
 ```
