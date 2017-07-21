@@ -1717,6 +1717,48 @@ Requires authentication.
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h2 id="upload-attachment">Upload Attachment</h2>
+
+<table><thead>
+<tr>
+<th>name</th>
+<th></th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image</td>
+<td>file</td>
+<td>Image</td>
+</tr>
+</tbody></table>
+<pre class="highlight sh tab-shell"><code>curl -X POST <span class="se">\</span>
+  http://localhost:3000/api/transaction/8/upload <span class="se">\</span>
+  -H <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'authorization: token'</span> <span class="se">\</span>
+  -F <span class="nv">image</span><span class="o">=</span>@ycuOT5oO2r5BSe8RsRkE.jpg
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">10067</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nominal_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rp. 10.067"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saldo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status_string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Attachment Uploaded"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21T10:49:34+07:00"</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+        </span><span class="s2">"shipment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"small"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/small/8_1500608974.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/medium/8_1500608974.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"large"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://skripsi.home.dev/image/large/8_1500608974.jpg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
           <h1 id="transaction">Transaction</h1>
 
 <h2 id="get-users-transaction">Get User&rsquo;s Transaction</h2>
